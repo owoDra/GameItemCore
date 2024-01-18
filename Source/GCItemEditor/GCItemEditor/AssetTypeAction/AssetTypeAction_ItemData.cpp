@@ -71,7 +71,7 @@ public:
 
 #define LOCTEXT_NAMESPACE "AssetTypeActions"
 
-#pragma region SettingDataFactroy
+#pragma region ItemDataFactory
 
 UItemDataFactory::UItemDataFactory()
 {
@@ -111,7 +111,7 @@ bool UItemDataFactory::ConfigureProperties()
 	Options.ClassFilters.Add(Filter.ToSharedRef());
 
 	Filter->DisallowedClassFlags = CLASS_Abstract | CLASS_Deprecated | CLASS_NewerVersionExists | CLASS_HideDropDown;
-	Filter->AllowedChildrenOfClasses.Add(UDataAsset::StaticClass());
+	Filter->AllowedChildrenOfClasses.Add(UItemData::StaticClass());
 
 	const FText TitleText = LOCTEXT("CreateItemDataOptions", "Pick Class For ItemData Instance");
 	UClass* ChosenClass = nullptr;

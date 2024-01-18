@@ -20,10 +20,7 @@ public class GCItem : ModuleRules
         PublicDependencyModuleNames.AddRange(
             new string[]
             {
-                "Core",
-                "CoreUObject",
-                "Engine",
-                "DeveloperSettings",
+                "Core", "CoreUObject", "Engine",
             }
         );
 
@@ -31,6 +28,7 @@ public class GCItem : ModuleRules
         PrivateDependencyModuleNames.AddRange(
             new string[]
             {
+                "DeveloperSettings",
             }
         );
     }

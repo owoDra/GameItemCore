@@ -72,7 +72,7 @@ public:
 	const UItemInfo* FindInfoByClass(TSubclassOf<UItemInfo> InClass) const;
 
 	template <typename T>
-	const T* FindFragment() const
+	const T* FindInfo() const
 	{
 		return Cast<T>(FindInfoByClass(T::StaticClass()));
 	}

@@ -53,7 +53,7 @@ void FGCItemEditorModule::UnregisterPropertyCustomizations()
 void FGCItemEditorModule::RegisterAssetTypeActionCategory()
 {
 	static const FName CategoryKey{ TEXT("GameItemCore") };
-	static const FText CategoryDisplayName{ LOCTEXT("GameItemCoreCategory", "Game Item Core") };
+	static const FText CategoryDisplayName{ LOCTEXT("GameItemCoreCategory", "Item") };
 
 	Category = IAssetTools::Get().RegisterAdvancedAssetCategory(CategoryKey, CategoryDisplayName);
 }

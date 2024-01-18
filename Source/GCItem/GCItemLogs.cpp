@@ -2,4 +2,4 @@
 
 #include "GCItemLogs.h"
 
-DEFINE_LOG_CATEGORY(LogGC_Item);
+DEFINE_LOG_CATEGORY(LogGameCore_Item);
