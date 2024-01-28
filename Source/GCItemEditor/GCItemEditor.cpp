@@ -2,7 +2,6 @@
 
 #include "GCItemEditor.h"
 
-#include "PropertyCustomization/PropertyCustom_Picker_ItemType.h"
 #include "AssetTypeAction/AssetTypeAction_ItemData.h"
 
 IMPLEMENT_MODULE(FGCItemEditorModule, GCItemEditor)
@@ -12,41 +11,12 @@ IMPLEMENT_MODULE(FGCItemEditorModule, GCItemEditor)
 
 void FGCItemEditorModule::StartupModule()
 {
-	RegisterPropertyCustomizations();
 	RegisterAssetTypeActions();
 }
 
 void FGCItemEditorModule::ShutdownModule()
 {
-	UnregisterPropertyCustomizations();
 	UnregisterAssetTypeActions();
-}
-
-
-void FGCItemEditorModule::RegisterPropertyCustomizations()
-{
-	if (!FModuleManager::Get().IsModuleLoaded(NAME_PropertyEditorModule))
-	{
-		return;
-	}
-
-	auto& PropertyModule{ FModuleManager::LoadModuleChecked<FPropertyEditorModule>(NAME_PropertyEditorModule) };
-
-	FPropertyCustom_Picker_ItemType::RegisterToPropertyEditorModule(PropertyModule);
-
-	PropertyModule.NotifyCustomizationModuleChanged();
-}
-
-void FGCItemEditorModule::UnregisterPropertyCustomizations()
-{
-	if (!FModuleManager::Get().IsModuleLoaded(NAME_PropertyEditorModule))
-	{
-		return;
-	}
-
-	auto& PropertyModule{ FModuleManager::LoadModuleChecked<FPropertyEditorModule>(NAME_PropertyEditorModule) };
-
-	FPropertyCustom_Picker_ItemType::UnregisterToPropertyEditorModule(PropertyModule);
 }
 
 

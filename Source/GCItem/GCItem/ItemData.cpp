@@ -17,7 +17,7 @@ const FName UItemData::NAME_DefaultItemType("Item");
 UItemData::UItemData(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
 {
-	ItemType.Name = UItemData::NAME_DefaultItemType;
+	ItemType = UItemData::NAME_DefaultItemType;
 }
 
 #if WITH_EDITOR
@@ -64,7 +64,7 @@ EDataValidationResult UItemData::IsDataValid(FDataValidationContext& Context) co
 
 FPrimaryAssetId UItemData::GetPrimaryAssetId() const
 {
-	return FPrimaryAssetId(FPrimaryAssetType(ItemType.Name), GetFName());
+	return FPrimaryAssetId(FPrimaryAssetType(ItemType), GetFName());
 }
 
 FString UItemData::GetIdentifierString() const

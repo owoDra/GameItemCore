@@ -16,11 +16,6 @@ class FGCItemEditorModule : public IModuleInterface
 {
 public:
 	//
-	// Module name used to load/unload PropertyEditorModule
-	//
-	inline static const FName NAME_PropertyEditorModule{ TEXT("PropertyEditor") };
-
-	//
 	// Module name used to load/unload AssetToolsModule
 	//
 	inline static const FName NAME_AssetToolsModule{ TEXT("AssetTools") };
@@ -33,17 +28,6 @@ public:
 public:
 	virtual void StartupModule() override;
 	virtual void ShutdownModule() override;
-
-protected:
-	/**
-	 * Register PropertyCustomizations to the module
-	 */
-	void RegisterPropertyCustomizations();
-
-	/**
-	 * Unregister PropertyCustomizations from the module
-	 */
-	void UnregisterPropertyCustomizations();
 
 
 protected:

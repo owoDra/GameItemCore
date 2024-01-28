@@ -10,3 +10,12 @@ UItemDeveloperSettings::UItemDeveloperSettings()
 	CategoryName = TEXT("Game XXX Core");
 	SectionName = TEXT("Game Item Core");
 }
+
+#if WITH_EDITORONLY_DATA
+
+const TArray<FString>& UItemDeveloperSettings::GetItemTypeDefinitions()
+{
+	return GetDefault<UItemDeveloperSettings>()->ItemTypeDefinitions;
+}
+
+#endif

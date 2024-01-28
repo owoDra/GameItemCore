@@ -4,8 +4,6 @@
 
 #include "Engine/DataAsset.h"
 
-#include "Type/Picker/Picker_ItemType.h"
-
 #include "ItemData.generated.h"
 
 class UItemInfo;
@@ -42,8 +40,8 @@ protected:
 	//
 	// PrimaryAssetType name of this item data class
 	//
-	UPROPERTY(EditDefaultsOnly, Category = "Infomation")
-	FPicker_ItemType ItemType;
+	UPROPERTY(EditDefaultsOnly, Category = "Infomation", meta = (GetOptions = "GCItem.ItemDeveloperSettings.GetItemTypeDefinitions"))
+	FName ItemType;
 
 public:
 	virtual FPrimaryAssetId GetPrimaryAssetId() const;

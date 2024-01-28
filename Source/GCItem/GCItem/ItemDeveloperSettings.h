@@ -18,6 +18,8 @@ public:
 public:
 	UItemDeveloperSettings();
 
+#if WITH_EDITORONLY_DATA
+
 	///////////////////////////////////////////////
 	// Primary Asset Type
 public:
@@ -25,7 +27,13 @@ public:
 	// List of Observer classes to be created in GameFeaturePolicy
 	//
 	UPROPERTY(Config, EditAnywhere, Category = "Primary Asset Type", meta = (NoElementDuplicate))
-	TArray<FName> ItemTypeDefinitions;
+	TArray<FString> ItemTypeDefinitions;
+
+public:
+	UFUNCTION()
+	static const TArray<FString>& GetItemTypeDefinitions();
+
+#endif
 
 };
 
