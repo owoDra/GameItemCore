@@ -44,7 +44,7 @@ protected:
 	FName ItemType;
 
 public:
-	virtual FPrimaryAssetId GetPrimaryAssetId() const;
+	virtual FPrimaryAssetId GetPrimaryAssetId() const override;
 
 	/**
 	 * Return PrimaryAssetId as FString
