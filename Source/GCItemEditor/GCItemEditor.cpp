@@ -7,8 +7,6 @@
 IMPLEMENT_MODULE(FGCItemEditorModule, GCItemEditor)
 
 
-#define LOCTEXT_NAMESPACE "GCItemEditorModule"
-
 void FGCItemEditorModule::StartupModule()
 {
 	RegisterAssetTypeActions();
@@ -23,7 +21,7 @@ void FGCItemEditorModule::ShutdownModule()
 void FGCItemEditorModule::RegisterAssetTypeActionCategory()
 {
 	static const FName CategoryKey{ TEXT("GameItem") };
-	static const FText CategoryDisplayName{ LOCTEXT("GameItemCategory", "Item") };
+	static const FText CategoryDisplayName{ NSLOCTEXT("GameXXX","GameItemCategory", "Item") };
 
 	Category = IAssetTools::Get().RegisterAdvancedAssetCategory(CategoryKey, CategoryDisplayName);
 }
@@ -57,5 +55,3 @@ void FGCItemEditorModule::UnregisterAssets(TArray<TSharedPtr<FAssetTypeActions_B
 		}
 	}
 }
-
-#undef LOCTEXT_NAMESPACE
