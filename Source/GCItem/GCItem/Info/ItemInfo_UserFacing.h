@@ -24,7 +24,7 @@ public:
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "User Facing")
 	FText Description;
 
-	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "User Facing", meta = (DisplayThumbnail = "true", AssetBundles = "UI, Client", AllowedClasses = "/Script/Engine.Texture,/Script/Engine.MaterialInterface,/Script/Engine.SlateTextureAtlasInterface", DisallowedClasses = "/Script/MediaAssets.MediaTexture"))
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "User Facing", meta = (DisplayThumbnail = "true", AssetBundles = "Client", AllowedClasses = "/Script/Engine.Texture,/Script/Engine.MaterialInterface,/Script/Engine.SlateTextureAtlasInterface", DisallowedClasses = "/Script/MediaAssets.MediaTexture"))
 	TSoftObjectPtr<UObject> Image;
 
 };
