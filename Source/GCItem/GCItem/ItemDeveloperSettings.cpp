@@ -11,11 +11,8 @@ UItemDeveloperSettings::UItemDeveloperSettings()
 	SectionName = TEXT("Game Item Core");
 }
 
-#if WITH_EDITORONLY_DATA
 
 const TArray<FString>& UItemDeveloperSettings::GetItemTypeDefinitions()
 {
 	return GetDefault<UItemDeveloperSettings>()->ItemTypeDefinitions;
 }
-
-#endif

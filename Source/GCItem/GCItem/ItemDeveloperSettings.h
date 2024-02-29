@@ -18,8 +18,6 @@ public:
 public:
 	UItemDeveloperSettings();
 
-#if WITH_EDITORONLY_DATA
-
 	///////////////////////////////////////////////
 	// Primary Asset Type
 public:
@@ -32,8 +30,5 @@ public:
 public:
 	UFUNCTION()
 	static const TArray<FString>& GetItemTypeDefinitions();
-
-#endif
-
 };
 
